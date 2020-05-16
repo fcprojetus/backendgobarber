@@ -11,7 +11,6 @@ import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
 import AvailableController from './app/controllers/AvailableController';
 
-import allowCors from './config/cors';
 import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
@@ -22,7 +21,6 @@ routes.post('/sessions', SessionController.store);
 
 routes.get('/', (req, res) => res.send('ok deu certo com o teste 02'));
 
-routes.use(allowCors);
 routes.use(authMiddleware);
 
 routes.put('/users', UserController.update);
